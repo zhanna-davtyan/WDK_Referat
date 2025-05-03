@@ -35,28 +35,55 @@ Bevor Sie beginnen, stellen Sie sicher, dass die folgende Software auf Ihrem Sys
     Dieser Befehl lädt das CouchDB-Image herunter (falls noch nicht vorhanden) und startet den Container im Hintergrund (`-d`).
     * Sie können überprüfen, ob CouchDB läuft, indem Sie im Browser auf `http://localhost:5984/_utils/` zugreifen. Loggen Sie sich mit dem Benutzernamen `admin` und Ihrem festgelegten Passwort ein.
 
-4.  **Python Virtual Environment erstellen:**
-    Es wird dringend empfohlen, eine virtuelle Umgebung zu verwenden, um Abhängigkeiten zu isolieren. Führen Sie im Projekt-Hauptverzeichnis aus:
+## Setup-Schritte für die Ausführung
+
+Dieses Projekt verwendet eine virtuelle Umgebung (`venv`), um Projektabhängigkeiten zu isolieren.
+
+1.  **Stellen Sie sicher, dass Python 3 installiert ist:**
+    Öffnen Sie ein Terminal und prüfen Sie Ihre Python-Version:
     ```bash
-    python3.10 -m venv .venv
+    python3 --version
     ```
-    *(Hinweis: Je nach Systemkonfiguration lautet der Befehl möglicherweise nur `python` anstelle von `python3.10`)*.
-    Dies erstellt einen Ordner `.venv` mit der isolierten Python-Umgebung.
+    *(Eine Version >= 3.10 wird empfohlen, da das Projekt damit entwickelt wurde. Neuere Versionen wie 3.11 oder 3.12 funktionieren wahrscheinlich ebenfalls.)*
 
-5.  **Virtuelle Umgebung aktivieren:**
-    * **macOS / Linux:**
-        ```bash
-        source .venv/bin/activate
-        ```
-    * **Windows (cmd/powershell):**
-        ```bash
-        .venv\Scripts\activate
-        ```
-    Der Terminal-Prompt sollte sich ändern und `(.venv)` anzeigen.
+2.  **Navigieren Sie zum Projektverzeichnis:**
+    Wechseln Sie im Terminal in das Hauptverzeichnis dieses Projekts (wo sich diese README und die `requirements.txt` befinden).
 
-6.  **Python-Abhängigkeiten installieren:**
-    Installieren Sie alle benötigten Python-Pakete mit pip innerhalb der aktivierten Umgebung:
+3.  **Virtuelle Umgebung erstellen:**
+    Erstellen Sie eine virtuelle Umgebung namens `.venv` mit Ihrem `python3`-Befehl:
+    ```bash
+    python3 -m venv .venv
+    ```
+
+4.  **Virtuelle Umgebung aktivieren:**
+    * macOS / Linux: `source .venv/bin/activate`
+    * Windows (Git Bash): `source .venv/Scripts/activate`
+    * Windows (Cmd): `.venv\Scripts\activate.bat`
+    * Windows (PowerShell): `.venv\Scripts\Activate.ps1`
+    *(Der Terminal-Prompt sollte sich ändern und `(.venv)` am Anfang zeigen.)*
+
+5.  **Benötigte Pakete installieren:**
+    Installieren Sie alle notwendigen Bibliotheken aus der mitgelieferten `requirements.txt`-Datei:
     ```bash
     pip install -r requirements.txt
     ```
+6. **Erstellen der `.env`-Datei:**
 
+- Für die Konfiguration des Projekts wird eine `.env`-Datei benötigt, um sensible Informationen wie Passwörter oder API-Schlüssel sicher zu speichern. Folgen Sie diesen Schritten, um Ihre eigene `.env`-Datei zu erstellen:
+
+ - **Beispiel `.env`-Datei kopieren:**
+    Im Projektverzeichnis befindet sich eine Datei namens `.env.example`. Kopieren Sie diese Datei und benennen Sie sie in `.env` um:
+    ```bash
+    cp .env.example .env
+    ```
+
+ - **Inhalt der `.env`-Datei anpassen:**
+    Öffnen Sie die `.env`-Datei in einem Texteditor und passen Sie die Werte entsprechend Ihrer Umgebung an. Zum Beispiel:
+    ```env
+    COUCHDB_USER=Username
+    COUCHDB_PASSWORD=SicheresPasswort
+    ```
+
+
+7.  **Jupyter Notebook starten:**
+    Sie können nun Jupyter Notebook/Lab starten oder die `.ipynb`-Datei öffnen. Stellen Sie sicher, dass der Kernel auf die gerade erstellte `.venv`-Umgebung zeigt.
