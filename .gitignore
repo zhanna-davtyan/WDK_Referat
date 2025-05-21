@@ -1,12 +1,7 @@
-# Ignoriere die virtuelle Umgebung
 .venv/
-
-# Ignoriere macOS Systemdateien
 .DS_Store
-
-# Ignoriere Python Cache-Dateien
 __pycache__/
 *.pyc
-
 .env
 *.ipynb filter=nbstripout
+data/
