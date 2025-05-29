@@ -32,9 +32,24 @@ Bevor Sie beginnen, stellen Sie sicher, dass die folgende Software auf Ihrem Sys
     ```bash
     docker-compose up -d
     ```
-    Dieser Befehl lädt das CouchDB-Image herunter (falls noch nicht vorhanden) und startet den Container im Hintergrund (`-d`).
+    Dieser Befehl lädt das CouchDB-Image herunter (falls noch nicht vorhanden) und startet den Container im Hintergrund (`-d` = detached mode).
+
+    Alternativ können Sie die Oberfläche verwenden.
+
+    Sie können auch oben in der docker-compose.yml auf „Run Service“ oder „Run All Services“ klicken.
+    Das hat denselben Effekt wie der Terminal-Befehl.
+   
     * Sie können überprüfen, ob CouchDB läuft, indem Sie im Browser auf `http://localhost:5984/_utils/` zugreifen. Loggen Sie sich mit dem Benutzernamen `admin` und Ihrem festgelegten Passwort ein.
 
+    Um den CouchDB-Container zu stoppen und zu entfernen, ohne die gespeicherten Daten zu löschen, verwenden Sie:
+    ```bash
+    docker-compose down
+    ```
+    Um den Container zu stoppen und alle Daten zu löschen, verwenden Sie:
+    ```bash
+    docker-compose down -v
+    ```
+    *(Achtung: Dadurch gehen alle in CouchDB gespeicherten Daten verloren!)*
 ## Setup-Schritte für die Ausführung
 
 Dieses Projekt verwendet eine virtuelle Umgebung (`venv`), um Projektabhängigkeiten zu isolieren.
