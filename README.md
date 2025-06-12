@@ -82,23 +82,6 @@ Dieses Projekt verwendet eine virtuelle Umgebung (`venv`), um Projektabhängigke
     ```bash
     pip install -r requirements.txt
     ```
-6. **Erstellen der `.env`-Datei:**
 
-- Für die Konfiguration des Projekts wird eine `.env`-Datei benötigt, um sensible Informationen wie Passwörter oder API-Schlüssel sicher zu speichern. Folgen Sie diesen Schritten, um Ihre eigene `.env`-Datei zu erstellen:
-
- - **Beispiel `.env`-Datei kopieren:**
-    Im Projektverzeichnis befindet sich eine Datei namens `.env.example`. Kopieren Sie diese Datei und benennen Sie sie in `.env` um:
-    ```bash
-    cp .env.example .env
-    ```
-
- - **Inhalt der `.env`-Datei anpassen:**
-    Öffnen Sie die `.env`-Datei in einem Texteditor und passen Sie die Werte entsprechend Ihrer Umgebung an. Zum Beispiel:
-    ```env
-    COUCHDB_USER=Username
-    COUCHDB_PASSWORD=SicheresPasswort
-    ```
-
-
-7.  **Jupyter Notebook starten:**
+6.  **Jupyter Notebook starten:**
     Sie können nun Jupyter Notebook/Lab starten oder die `.ipynb`-Datei öffnen. Stellen Sie sicher, dass der Kernel auf die gerade erstellte `.venv`-Umgebung zeigt.
