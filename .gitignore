@@ -1,8 +1,4 @@
 .venv/
 .DS_Store
-__pycache__/
-*.pyc
 .env
-*.ipynb filter=nbstripout
 data/
-.devcontainer/
