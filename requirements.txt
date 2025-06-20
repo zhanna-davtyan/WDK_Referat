@@ -1,4 +1,4 @@
-CouchDB==1.2        
+CouchDB      
 ipykernel    
 matplotlib
 numpy       
@@ -6,3 +6,4 @@ pandas
 seaborn     
 python-dotenv    
 kagglehub
+jupyterlab

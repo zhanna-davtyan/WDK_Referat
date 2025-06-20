@@ -1,8 +1,6 @@
 # CouchDB CIA World Factbook Analyse 
 
-Dieses Projekt dient der Analyse von Daten aus dem CIA World Factbook unter Verwendung von Python und einer CouchDB NoSQL-Datenbank, die mittels Docker ausgeführt wird. Es wurde im Rahmen eines Referats erstellt.
-
-Das Projekt umfasst Skripte zum Laden der Factbook-Daten in die CouchDB-Datenbank und anschließende Analyse-Skripte mittels Jupyter Notebooks.
+Dieses Projekt demonstriert die Migration und Analyse von Daten aus dem CIA World Factbook. Es nutzt eine CouchDB NoSQL-Datenbank, die über Docker ausgeführt wird, und führt die Analysen in Jupyter Notebooks durch, um sozioökonomische Muster zu identifizieren.
 
 ## Voraussetzungen
 
@@ -12,7 +10,6 @@ Bevor Sie beginnen, stellen Sie sicher, dass die folgende Software auf Ihrem Sys
     * Installationsanleitung: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 * **Python:** Version 3.10 oder höher. Dieses Projekt wurde spezifisch mit Python 3.10 entwickelt und getestet.
     * Download: [https://www.python.org/](https://www.python.org/)
-* **Git:** (Optional, aber empfohlen) Zum Klonen des Repositories.
 
 ## Setup und Installation
 
@@ -23,11 +20,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass die folgende Software auf Ihrem Sys
     ```
     Alternativ kann das Repository auch als ZIP-Datei heruntergeladen und entpackt werden.
 
-2.  **CouchDB Passwort konfigurieren:**
-    * **WICHTIG:** Öffnen Sie die Datei `docker-compose.yml`. Ändern Sie den Wert bei `COUCHDB_PASSWORD` von `SicheresPasswort` zu einem eigenen, sicheren Passwort.
-    
-
-3.  **CouchDB-Container starten:**
+2.  **CouchDB-Container starten:**
     Öffnen Sie ein Terminal im Projekt-Hauptverzeichnis (wo die `docker-compose.yml` liegt) und führen Sie aus:
     ```bash
     docker-compose up -d
@@ -83,5 +76,11 @@ Dieses Projekt verwendet eine virtuelle Umgebung (`venv`), um Projektabhängigke
     pip install -r requirements.txt
     ```
 
-6.  **Jupyter Notebook starten:**
-    Sie können nun Jupyter Notebook/Lab starten oder die `.ipynb`-Datei öffnen. Stellen Sie sicher, dass der Kernel auf die gerade erstellte `.venv`-Umgebung zeigt.
+6.  **Notebooks ausführen:**
+    
+    1. JupyterLab starten:
+    ```bash
+    jupyter lab
+    ```
+
+
